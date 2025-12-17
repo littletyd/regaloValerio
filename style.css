@@ -74,7 +74,8 @@ h1 {
 /* Fade-in sequenziale con due blocchi */
 p[id^="line"] {
   font-family: 'Cormorant', serif;
-  font-size: 1.5em;
+  font-size: 1.2em;
+  font-weight: 400;
   color: #333;
   opacity: 0;
   transition: opacity 2s ease;
