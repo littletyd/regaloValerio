@@ -145,13 +145,14 @@
 
           // Pulsante per riprovare
           const retryBtn = document.createElement('button');
-          retryBtn.textContent = "Riprova";
+          retryBtn.innerHTML = '<i class="fas fa-home"></i>';
+          retryBtn.style.width = "12%";
           retryBtn.style.position = 'fixed';
           retryBtn.style.top = '60%';
           retryBtn.style.left = '50%';
           retryBtn.style.transform = 'translateX(-50%)';
           retryBtn.style.padding = '10px 20px';
-          retryBtn.style.fontSize = '18px';
+          retryBtn.style.fontSize = '15px';
           retryBtn.style.cursor = 'pointer';
           retryBtn.style.zIndex = 12;
           retryBtn.style.backgroundColor = 'red';
