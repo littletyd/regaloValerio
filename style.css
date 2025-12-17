@@ -1,0 +1,240 @@
+/* ------------------ Body e sfondo ------------------ */
+body {
+  font-family: 'Cormorant', serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  position: relative;
+  background: url('https://i.postimg.cc/sxFrmSWq/Whats-App-Image-2025-12-17-at-17-09-06-(1).jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.4);
+  z-index: 5;
+}
+
+#content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70%;
+  width: 75%;
+  position: relative;
+  z-index: 10;
+}
+
+/* ------------------ Card ------------------ */
+.card {
+  text-align: center;
+  background: url('https://i.postimg.cc/C5NwVN5Y/parete-di-fondo-bianco.jpg') no-repeat center center;
+  background-size: cover;
+  padding: 50px 60px;
+  border-radius: 25px;
+  box-shadow: 0 0 30px rgba(255,255,255,0.6);
+  position: relative;
+  z-index: 10;
+  max-width: 70%;
+  width: 70%;
+  margin: 80px 0;
+}
+
+h1 {
+  font-family: 'Cormorant', serif;
+  font-size: 3em;
+  color: #A27B68;
+  animation: pop 0.7s ease forwards;
+}
+
+/* Media Query per dispositivi con larghezza massima di 600px (smartphone) */
+@media (max-width: 600px) {
+  #content {
+    width: 80%;
+  }
+  .card {
+    padding: 30px;
+    line-height: 1.4;
+    max-width: 100%;
+    width: 100%;
+  }
+  h1 {
+    font-size: 1.5em;
+    color: #A27B68;
+    animation: pop 0.7s ease forwards;
+  }
+}
+
+/* ------------------ Paragrafi fade-in ------------------ */
+/* Fade-in sequenziale con due blocchi */
+p[id^="line"] {
+  font-family: 'Cormorant', serif;
+  font-size: 1.5em;
+  color: #333;
+  opacity: 0;
+  transition: opacity 2s ease;
+}
+
+@media (max-width: 600px) {
+  p[id^="line"] {
+    font-size: 1.2em;
+  }
+}
+
+/* Prime 4 righe: più vicine */
+#line1, #line2, #line3, #line5, #line6, #line7, #line9, #line10, #line11, #line13, #line14, #line15 {
+  margin-bottom: 1px;
+}
+#line4, #line8, #line12 {
+  margin-bottom: 40px; /* spazio verso il secondo blocco */
+}
+
+#line16 {
+  font-size: 36px;
+  font-weight: bold; /* oppure 700 */
+}
+
+p.visible {
+  opacity: 1;
+}
+
+/* ------------------ Paragrafi Main ------------------ */
+.group1 p {
+  margin-bottom: 5px;  /* righe molto vicine */
+}
+
+.group2 {
+  margin-top: 40px;    /* spazio tra i due gruppi */
+}
+
+.group2 p {
+  margin-bottom: 10px; /* distanza interna del secondo gruppo */
+}
+
+/* ------------------ Confetti ------------------ */
+.confetti {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.confetti span {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  top: -10px;
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: fall linear infinite;
+}
+
+/* animazione caduta + rotazione */
+@keyframes fall {
+  0% {
+    transform: translateY(0) rotate(0deg) translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg) translateX(50px);
+    opacity: 0;
+  }
+}
+
+/* ------------------ Pulsanti icone ------------------ */
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+button i, .downloadBtn i {
+  width: 100%;
+  font-size: 0.5em; /* aumenta o diminuisci il numero per ridimensionare */
+}
+
+button:active, .downloadBtn:active {
+  transform: scale(3);
+  box-shadow: 0 0 25px rgba(255,255,255,0.7);
+}
+
+button, .downloadBtn {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  font-size: 2em;
+  cursor: pointer;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  background-color: #A27B68;
+  filter: saturate(70%);
+  color: white;
+
+  /* Transizione graduale su tutto ciò che cambia */
+  transition: transform 0.3s ease, filter 0.1s ease, box-shadow 0.3s ease;
+  transform: scale(1); /* stato iniziale */
+  box-shadow: 0 0 10px rgba(255,255,255,0.4); /* stato iniziale */
+}
+
+/* Hover */
+button:hover, .downloadBtn:hover {
+  background-color: #efd692;
+  filter: saturate(120%);
+  box-shadow: 0 0 25px rgba(255,255,255,0.6);
+  transition: background-color 0.2s ease;
+}
+
+/* ------------------ Player custom ------------------ */
+#songPlayer {
+  margin-top: 80px;
+}
+
+audio {
+  width: 80%;
+  border-radius: 10px;
+}
+
+/* Controlli WebKit */
+audio::-webkit-media-controls-panel {
+background: linear-gradient(90deg, 
+    #8BA68B 0%,   /* più chiaro */
+    #A27B68 33%,  
+    #6C0E38 66%,  
+    #4F3B1D 100%  /* più scuro */
+);
+
+}
+
+audio::-webkit-media-controls-play-button,
+audio::-webkit-media-controls-volume-slider,
+audio::-webkit-media-controls-mute-button,
+audio::-webkit-media-controls-current-time-display,
+audio::-webkit-media-controls-time-remaining-display,
+audio::-webkit-media-controls-seek-back-button,
+audio::-webkit-media-controls-seek-forward-button,
+audio::-webkit-media-controls-toggle-closed-captions-button {
+  filter: invert(100%);
+}
+
+/* Barra avanzamento (timeline) bianca */
+audio::-webkit-media-controls-timeline {
+  background-color: transparent;
+  color: white;
+}
+
+/* Chrome/Edge/Safari: barra avanzamento thumb */
+audio::-webkit-slider-thumb {
+  background-color: white;
+}

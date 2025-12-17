@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Auguri</title>
+<link rel="stylesheet" href="style.css">
+
+<!-- Google Fonts: Cormorant -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+<div id="content" style="display:none;">
+  <!-- Confetti sullo sfondo -->
+  <div class="confetti"></div>
+
+  <div class="card">
+    <h1>Tanti auguri grandissimo figlio di una CAGNA TROIA PORCODDIO</h1>
+
+  <div class="group group1">
+    <p id="line1">Johnny e Bravo, poliziotti di Lovo,</p>
+    <p id="line2">Festeggiano su una spiaggia tra sole e fregna.</p>
+    <p id="line3">È il compleanno di Johnny, tutto sembra tranquillo,</p>
+    <p id="line4">Tra risate, cocktail e sabbia bollente.</p>
+  </div>
+
+  <div class="group group2">
+    <p id="line5">Dal mare arriva la nave Cotton Club,</p>
+    <p id="line6">Scarica negri come un’orda senza freni.</p>
+    <p id="line7">Il capitano avanza, elegante, vestito di bianco,</p>
+    <p id="line8">Con un solo problema: è un Necro.</p>
+  </div>
+
+  <div class="group group3">
+    <p id="line9">La spiaggia diventa un campo di battaglia,</p>
+    <p id="line10">Fondine aperte, piedi nell’acqua salata.</p>
+    <p id="line11">Johnny e Bravo tengono la posizione,</p>
+    <p id="line12">Il nemico viene respinto.</p>
+  </div>
+
+  <div class="group group4">
+    <p id="line13">Il pericolo è finito, la notte torna calma,</p>
+    <p id="line14">la Cotton Club sparisce all’orizzonte.</p>
+    <p id="line15">La festa riparte tra brindisi e caos,</p>
+    <p id="line16">Perché il compleanno di Johnny va celebrato.</p>
+  </div>
+
+    <!-- Player audio -->
+    <audio id="songPlayer" controls>
+      <source src="Il Compleanno di Johnny (Cotton Club Massacre).wav" type="audio/mpeg">
+      Il tuo browser non supporta l'elemento audio.
+    </audio>
+
+    <!-- Pulsanti icone sulla stessa linea -->
+    <div class="button-container">
+      <a href="Il Compleanno di Johnny (Cotton Club Massacre).wav" download class="downloadBtn">
+        <button id="magicBtn">
+            <i class="fas fa-music"></i>
+        </button>
+      </a>
+
+      <a href="Il Compleanno di Johnny (Cotton Club Massacre).mp4" download class="downloadBtn">
+        <button id="magicBtn">
+            <i class="fas fa-video"></i>
+        </button>
+      </a>
+
+      <a href="regalo.pdf" download class="downloadBtn">
+        <button id="magicBtn">
+            <i class="fas fa-gift"></i>
+        </button>
+      </a>
+
+      <a href="boom.jpeg" download class="downloadBtn">
+        <button id="magicBtn">
+            <i class="fas fa-question"></i>
+        </button>
+      </a>
+
+    </div>
+  </div>
+</div>
+  <script src="script.js"></script>
+  <script>
+    const password = "jeb";
+
+  // Controlla se l'utente ha già inserito la password correttamente
+  if(sessionStorage.getItem("accessGranted") === "true") {
+      document.getElementById("content").style.display = "flex";
+  } else {
+      const userInput = prompt("Inserisci il nome in codice dei due agenti segreti (tutto maiuscolo, tutto attaccato)");
+
+      if(userInput === password){
+          sessionStorage.setItem("accessGranted", "true"); // salva lo stato
+          document.getElementById("content").style.display = "flex";
+      } else {
+          // codice per accesso negato...
+          document.getElementById("content").remove();
+          document.body.style.background = "url('https://i.postimg.cc/BbXtR2w9/Whats-App-Image-2025-12-17-at-17-09-07-(2).jpg') no-repeat center center fixed";
+          document.body.style.height = "100vh";
+          document.body.style.margin = "0";
+          document.body.style.backgroundSize = "contain";
+          document.body.style.backgroundPosition = "center";
+          document.body.style.backgroundRepeat = "no-repeat";
+          document.body.style.backgroundColor = "black";
+
+          // Overlay bianco semitrasparente
+          const overlay = document.createElement('div');
+          overlay.style.position = 'fixed';
+          overlay.style.top = 0;
+          overlay.style.left = 0;
+          overlay.style.width = '100%';
+          overlay.style.height = '100%';
+          overlay.style.backgroundColor = 'rgba(255,255,255,0.1)';
+          overlay.style.zIndex = 10;
+          document.body.appendChild(overlay);
+
+          // Messaggio accesso negato
+          const msg1 = document.createElement('h1');
+          msg1.textContent = "NDO CAZZO VAI? AHAH - ACCESSO NEGRATO FIGLIO DI TROIA";
+          msg1.style.position = 'fixed';
+          msg1.style.top = '50%';
+          msg1.style.left = '50%';
+          msg1.style.width = '100%';
+          msg1.style.transform = 'translate(-50%, -50%)';
+          msg1.style.color = 'red';
+          msg1.style.textAlign = 'center';
+          msg1.style.fontSize = '40px'; // riduci altrimenti esce dallo schermo
+          msg1.style.margin = '0';
+          msg1.style.padding = '20px';
+          msg1.style.backgroundColor = 'black';
+          msg1.style.zIndex = 11;
+          document.body.appendChild(msg1);
+      }
+  }
+  </script>
+</body>
+</html>
