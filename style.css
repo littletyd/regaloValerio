@@ -45,6 +45,10 @@ body::before {
   margin: 80px 0;
 }
 
+.titolo {
+  margin-bottom: 1px;
+}
+
 h1 {
   font-family: 'Cormorant', serif;
   font-size: 2em;
