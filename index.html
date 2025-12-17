@@ -142,6 +142,29 @@
           msg1.style.backgroundColor = 'rgba(0,0,0,0.4)';
           msg1.style.zIndex = 11;
           document.body.appendChild(msg1);
+
+          // Pulsante per riprovare
+          const retryBtn = document.createElement('button');
+          retryBtn.textContent = "Riprova";
+          retryBtn.style.position = 'fixed';
+          retryBtn.style.top = '60%';
+          retryBtn.style.left = '50%';
+          retryBtn.style.transform = 'translateX(-50%)';
+          retryBtn.style.padding = '10px 20px';
+          retryBtn.style.fontSize = '18px';
+          retryBtn.style.cursor = 'pointer';
+          retryBtn.style.zIndex = 12;
+          retryBtn.style.backgroundColor = 'red';
+          retryBtn.style.color = 'white';
+          retryBtn.style.border = 'none';
+          retryBtn.style.borderRadius = '5px';
+          
+          // Al click ricarica la pagina
+          retryBtn.addEventListener('click', () => {
+              location.reload();
+          });
+          
+          document.body.appendChild(retryBtn);
       }
   }
   </script>
