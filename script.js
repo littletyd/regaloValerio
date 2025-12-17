@@ -33,7 +33,7 @@ function showTitleAndLines() {
   // dopo 1s inizia il testo
   setTimeout(() => {
     fadeLines(lines);
-  }, 1500);
+  }, 1000);
 }
 
 function fadeLines(lines, index = 0) {
@@ -50,7 +50,7 @@ function fadeLines(lines, index = 0) {
   // attende 2s e passa alla prossima riga
   setTimeout(() => {
     fadeLines(lines, index + 1);
-  }, 1000);
+  }, 700);
 }
 
 window.addEventListener('load', () => {
