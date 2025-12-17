@@ -45,9 +45,13 @@ body::before {
   margin: 80px 0;
 }
 
+.titolo {
+  margin-bottom: 2px;
+}
+
 h1 {
   font-family: 'Cormorant', serif;
-  font-size: 3em;
+  font-size: 2em;
   color: #A27B68;
   animation: pop 0.7s ease forwards;
 }
